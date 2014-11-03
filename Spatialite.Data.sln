@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spatialite.Data.Importer", "Spatialite.Data.Importer\Spatialite.Data.Importer.csproj", "{DF6A1BCB-33C5-43DA-90EB-49959B71E6DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{CC4114E3-A1E9-4DE4-B1EF-191E0B591672}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spatialite", "Spatialite", "{5CDB0DF8-239B-45C3-B8D2-8B8ED8CF95D9}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\SpatialLite\libcharset1.dll = Lib\SpatialLite\libcharset1.dll
+		Lib\SpatialLite\libexpat-1.dll = Lib\SpatialLite\libexpat-1.dll
+		Lib\SpatialLite\libgeos-3-2-2.dll = Lib\SpatialLite\libgeos-3-2-2.dll
+		Lib\SpatialLite\libgeos_c-1.dll = Lib\SpatialLite\libgeos_c-1.dll
+		Lib\SpatialLite\libiconv2.dll = Lib\SpatialLite\libiconv2.dll
+		Lib\SpatialLite\libjpeg-62.dll = Lib\SpatialLite\libjpeg-62.dll
+		Lib\SpatialLite\libpng14.dll = Lib\SpatialLite\libpng14.dll
+		Lib\SpatialLite\libproj-0.dll = Lib\SpatialLite\libproj-0.dll
+		Lib\SpatialLite\libspatialite-2.dll = Lib\SpatialLite\libspatialite-2.dll
+		Lib\SpatialLite\libtiff-3.dll = Lib\SpatialLite\libtiff-3.dll
+		Lib\SpatialLite\libtiffxx-3.dll = Lib\SpatialLite\libtiffxx-3.dll
+		Lib\SpatialLite\libturbojpeg.dll = Lib\SpatialLite\libturbojpeg.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spatialite.Data.Console", "Spatialite.Data.Console\Spatialite.Data.Console.csproj", "{0E6B6F92-B077-4261-9881-6C58DE3B2702}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spatialite.Data", "Spatialite.Data\Spatialite.Data.csproj", "{90D894BA-3949-4326-98C6-74E642CF9BB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spatialite.Data.Tests", "Spatialite.Data.Tests\Spatialite.Data.Tests.csproj", "{6AE9AB24-851C-4FE7-93B4-D1EFA387B590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoNames.Data", "GeoNames.Data\GeoNames.Data.csproj", "{77BF8E74-DCB6-453C-820F-A2C2F92C776C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimezoneConverter", "TimezoneConverter\TimezoneConverter.csproj", "{5607FC38-2DF6-4740-A779-C39EF650E8C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40A85858-32AC-4682-AD63-02422EB4C1CA}"
+	ProjectSection(SolutionItems) = preProject
+		Settings.StyleCop = Settings.StyleCop
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{616385EE-DEE1-44D0-BA33-E86FCE4BDBBC}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF6A1BCB-33C5-43DA-90EB-49959B71E6DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF6A1BCB-33C5-43DA-90EB-49959B71E6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF6A1BCB-33C5-43DA-90EB-49959B71E6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF6A1BCB-33C5-43DA-90EB-49959B71E6DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E6B6F92-B077-4261-9881-6C58DE3B2702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E6B6F92-B077-4261-9881-6C58DE3B2702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E6B6F92-B077-4261-9881-6C58DE3B2702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E6B6F92-B077-4261-9881-6C58DE3B2702}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90D894BA-3949-4326-98C6-74E642CF9BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D894BA-3949-4326-98C6-74E642CF9BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D894BA-3949-4326-98C6-74E642CF9BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D894BA-3949-4326-98C6-74E642CF9BB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AE9AB24-851C-4FE7-93B4-D1EFA387B590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AE9AB24-851C-4FE7-93B4-D1EFA387B590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AE9AB24-851C-4FE7-93B4-D1EFA387B590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AE9AB24-851C-4FE7-93B4-D1EFA387B590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77BF8E74-DCB6-453C-820F-A2C2F92C776C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BF8E74-DCB6-453C-820F-A2C2F92C776C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BF8E74-DCB6-453C-820F-A2C2F92C776C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77BF8E74-DCB6-453C-820F-A2C2F92C776C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5607FC38-2DF6-4740-A779-C39EF650E8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5607FC38-2DF6-4740-A779-C39EF650E8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5607FC38-2DF6-4740-A779-C39EF650E8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5607FC38-2DF6-4740-A779-C39EF650E8C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5CDB0DF8-239B-45C3-B8D2-8B8ED8CF95D9} = {CC4114E3-A1E9-4DE4-B1EF-191E0B591672}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+[Oo]bj/
+[Bb]in/
+App_Data
+Packages
+Logs
+PrecompiledWeb/
+
+_ReSharper.*
+*crunch*
+
+*.user
+*.suo
+*.cache
+*.dotCover
+*.dotsettings
+!*.proj
+*.vspscc
