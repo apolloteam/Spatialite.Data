@@ -1831,10 +1831,7 @@
             IDictionary<string, string> dictXml = MapFromXml;
             foreach (KeyValuePair<string, string> item in dictXml)
             {
-                if (!dayligthNames.ContainsKey(item.Key))
-                {
-                    dayligthNames.Add(item.Key, item.Value);
-                }
+                dayligthNames[item.Key] = item.Value;
             }
 
             return dayligthNames;
@@ -1854,7 +1851,7 @@
             XmlDocument xdoc = new XmlDocument();
 
             // Lee y valida la configuración.
-            string fileXml = TimezoneConverterConfiguration.File; 
+            string fileXml = TimezoneConverterConfiguration.File;
             if (string.IsNullOrWhiteSpace(fileXml))
             {
                 throw new ConfigurationErrorsException();
@@ -3613,10 +3610,7 @@
             IDictionary<string, string> dictXml = MapFromXml;
             foreach (KeyValuePair<string, string> item in dictXml)
             {
-                if (!aux.ContainsKey(item.Key))
-                {
-                    aux.Add(item.Key, item.Value);
-                }
+                aux[item.Key] = item.Value;
             }
 
             return aux;

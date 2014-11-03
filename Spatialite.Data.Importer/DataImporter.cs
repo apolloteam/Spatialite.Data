@@ -61,7 +61,7 @@
                 using (SQLiteCommand cmd = this.connection.CreateCommand())
                 {
                     cmd.Transaction = txn;
-                    cmd.CommandText = "DROP TABLE IF EXISTS TimeZoneInfo;";
+                    cmd.CommandText = "DROP TABLE IF EXISTS TimeZones;";
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
                 }
@@ -69,7 +69,7 @@
                 using (SQLiteCommand cmd = this.connection.CreateCommand())
                 {
                     cmd.Transaction = txn;
-                    cmd.CommandText = @"CREATE TABLE IF NOT EXISTS TimeZoneInfo ( 
+                    cmd.CommandText = @"CREATE TABLE IF NOT EXISTS TimeZones ( 
                                             TimeZoneId TEXT NOT NULL,                                           
                                             TimeZoneName TEXT NULL,
                                             TimeZoneDaylightName TEXT NULL,
@@ -77,7 +77,7 @@
                                             CountryCode TEXT NULL, 
                                             GmtOffset DECIMAL NULL,
                                             DstOffset DECIMAL NULL,
-                                            RawOffset DECIMAL NULL,
+                                            RawOffset DECIMAL NULL
                                         );";
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
@@ -87,7 +87,7 @@
             }
 
             int cnt = 0;
-            SQLiteBulkInsert sbi = new SQLiteBulkInsert(this.connection, "TimeZoneInfo");
+            SQLiteBulkInsert sbi = new SQLiteBulkInsert(this.connection, "TimeZones");
             sbi.AddParameter("TimeZoneId", DbType.String);
             sbi.AddParameter("TimeZoneName", DbType.String);
             sbi.AddParameter("TimeZoneDaylightName", DbType.String);
@@ -162,7 +162,7 @@
                 using (SQLiteCommand cmd = this.connection.CreateCommand())
                 {
                     cmd.Transaction = txn;
-                    cmd.CommandText = @"SELECT AddGeometryColumn ('TimeZoneInfo', 'Geometry', 4326, 'Geometry', 2);";
+                    cmd.CommandText = @"SELECT AddGeometryColumn ('TimeZones', 'Geometry', 4326, 'Geometry', 2);";
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
                 }
@@ -170,7 +170,7 @@
                 using (SQLiteCommand cmd = this.connection.CreateCommand())
                 {
                     cmd.Transaction = txn;
-                    cmd.CommandText = @"UPDATE TimeZoneInfo SET Geometry = GeomFromText(Shape, 4326);";
+                    cmd.CommandText = @"UPDATE TimeZones SET Geometry = GeomFromText(Shape, 4326);";
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
                 }
@@ -178,7 +178,7 @@
                 using (SQLiteCommand cmd = this.connection.CreateCommand())
                 {
                     cmd.Transaction = txn;
-                    cmd.CommandText = @"SELECT CreateSpatialIndex('TimeZoneInfo', 'Geometry');";
+                    cmd.CommandText = @"SELECT CreateSpatialIndex('TimeZones', 'Geometry');";
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
                 }

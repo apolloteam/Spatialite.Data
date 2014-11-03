@@ -15,9 +15,9 @@
         /// <param name="args">The args.</param>
         private static void Main(string[] args)
         {
-            string connStr = @"Data Source=N:\Data\Timezones.db;Version=3;New=True;Pooling=True;Max Pool Size=1000;";
+            string connStr = @"Data Source=N:\Data\Booksys\TimeZonesAndCountryInfo.db;Version=3;New=True;Pooling=True;Max Pool Size=1000;";
             DataImporter di = new DataImporter(connStr);
-            di.ImportTimeZones(@"N:\Data\world\tz_world.shp");
+            di.ImportTimeZones(@"N:\Data\Local\world\tz_world.shp");
             di.ImportCountries();
 
             // Prueba los archivos importados.
