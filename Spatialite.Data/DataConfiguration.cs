@@ -52,6 +52,7 @@
                         {
                             architecture = "x64";
                         }
+
                         string location = Assembly.GetExecutingAssembly().Location;
                         string lib = Path.Combine(architecture, LibSpatialiteDll);
                         libPath = lib;
