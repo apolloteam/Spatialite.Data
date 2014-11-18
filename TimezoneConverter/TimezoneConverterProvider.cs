@@ -101,7 +101,7 @@
         /// <returns>Windows TimezoneId o null.</returns>
         public static string OlsonToWindows(string timezoneId, bool daylight = false)
         {
-            string ret = null;
+            string ret;
             IDictionary<string, string> map = daylight ? MapDaylight : MapStandarNames;
             map.TryGetValue(timezoneId, out ret);
             return ret;

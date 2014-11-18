@@ -45,6 +45,41 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{616385
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spatialite.Web", "Spatialite.Web\Spatialite.Web.csproj", "{E8863EE9-CE78-432D-80D3-FE84C243FF2A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x64", "x64", "{35A6D08F-B82B-49BE-AFA7-4D0C1A215F26}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\x64\libfreexl-1.dll = Lib\x64\libfreexl-1.dll
+		Lib\x64\libgcc_s_sjlj-1.dll = Lib\x64\libgcc_s_sjlj-1.dll
+		Lib\x64\libgeos-3-4-2.dll = Lib\x64\libgeos-3-4-2.dll
+		Lib\x64\libgeos_c-1.dll = Lib\x64\libgeos_c-1.dll
+		Lib\x64\libiconv-2.dll = Lib\x64\libiconv-2.dll
+		Lib\x64\liblzma-5.dll = Lib\x64\liblzma-5.dll
+		Lib\x64\libproj-0.dll = Lib\x64\libproj-0.dll
+		Lib\x64\libsqlite3-0.dll = Lib\x64\libsqlite3-0.dll
+		Lib\x64\libstdc++-6.dll = Lib\x64\libstdc++-6.dll
+		Lib\x64\libxml2-2.dll = Lib\x64\libxml2-2.dll
+		Lib\x64\spatialite.dll = Lib\x64\spatialite.dll
+		Lib\x64\zlib1.dll = Lib\x64\zlib1.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x86", "x86", "{CC7015D8-B51F-4C76-8019-20DF10E0DB5E}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\x86\libfreexl-1.dll = Lib\x86\libfreexl-1.dll
+		Lib\x86\libgcc_s_dw2-1.dll = Lib\x86\libgcc_s_dw2-1.dll
+		Lib\x86\libgeos-3-4-2.dll = Lib\x86\libgeos-3-4-2.dll
+		Lib\x86\libgeos_c-1.dll = Lib\x86\libgeos_c-1.dll
+		Lib\x86\libiconv-2.dll = Lib\x86\libiconv-2.dll
+		Lib\x86\liblzma-5.dll = Lib\x86\liblzma-5.dll
+		Lib\x86\libproj-0.dll = Lib\x86\libproj-0.dll
+		Lib\x86\libsqlite3-0.dll = Lib\x86\libsqlite3-0.dll
+		Lib\x86\libstdc++-6.dll = Lib\x86\libstdc++-6.dll
+		Lib\x86\libxml2-2.dll = Lib\x86\libxml2-2.dll
+		Lib\x86\mod_spatialite.dll = Lib\x86\mod_spatialite.dll
+		Lib\x86\spatialite.dll = Lib\x86\spatialite.dll
+		Lib\x86\zlib1.dll = Lib\x86\zlib1.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,11 +110,17 @@ Global
 		{5607FC38-2DF6-4740-A779-C39EF650E8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5607FC38-2DF6-4740-A779-C39EF650E8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5607FC38-2DF6-4740-A779-C39EF650E8C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8863EE9-CE78-432D-80D3-FE84C243FF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8863EE9-CE78-432D-80D3-FE84C243FF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8863EE9-CE78-432D-80D3-FE84C243FF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8863EE9-CE78-432D-80D3-FE84C243FF2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5CDB0DF8-239B-45C3-B8D2-8B8ED8CF95D9} = {CC4114E3-A1E9-4DE4-B1EF-191E0B591672}
+		{35A6D08F-B82B-49BE-AFA7-4D0C1A215F26} = {5CDB0DF8-239B-45C3-B8D2-8B8ED8CF95D9}
+		{CC7015D8-B51F-4C76-8019-20DF10E0DB5E} = {5CDB0DF8-239B-45C3-B8D2-8B8ED8CF95D9}
 	EndGlobalSection
 EndGlobal

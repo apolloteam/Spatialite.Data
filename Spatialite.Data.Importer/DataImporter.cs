@@ -5,7 +5,6 @@
     using System.Data;
     using System.Data.SQLite;
     using System.Diagnostics;
-    using System.Globalization;
 
     using DotSpatial.Data;
     using DotSpatial.Topology;
@@ -24,7 +23,13 @@
 
         #endregion
 
-        #region Constructors and Destructors
+        #region Constructors
+
+        /// <summary>Initializes a new instance of the <see cref="DataImporter"/> class.</summary>
+        public DataImporter()
+            : this(new SQLiteConnection(DataConfiguration.ConnectionString))
+        {
+        }
 
         /// <summary>Initializes a new instance of the <see cref="DataImporter"/> class.</summary>
         /// <param name="connection">The connection.</param>
@@ -40,7 +45,9 @@
             this.connection = connection;
             this.connection.Open();
             this.connection.EnableExtensions(true);
-            this.connection.LoadExtension("libspatialite-2.dll");
+            
+            // this.connection.LoadExtension("libspatialite-2.dll");
+            this.connection.LoadExtension(DataConfiguration.LibSpatialite);
         }
 
         #endregion
@@ -87,7 +94,7 @@
             }
 
             int cnt = 0;
-            SQLiteBulkInsert sbi = new SQLiteBulkInsert(this.connection, "TimeZones");
+            SqliteBulkInsert sbi = new SqliteBulkInsert(this.connection, "TimeZones");
             sbi.AddParameter("TimeZoneId", DbType.String);
             sbi.AddParameter("TimeZoneName", DbType.String);
             sbi.AddParameter("TimeZoneDaylightName", DbType.String);
@@ -128,8 +135,9 @@
                         {
                             // Simplify the polygon if necessary. Reduce the tolerance incrementally until we have a valid polygon.
                             double tolerance = 0.05;
-                            while (simplified == null || !(simplified is Polygon) || !simplified.IsValid
-                                   || simplified.IsEmpty)
+                            // ReSharper disable RedundantComparisonWithNull
+                            while (simplified == null || !(simplified is Polygon) || !simplified.IsValid || simplified.IsEmpty)
+                            // ReSharper restore RedundantComparisonWithNull
                             {
                                 simplified = TopologyPreservingSimplifier.Simplify(geometry, tolerance);
                                 tolerance -= 0.005;
@@ -234,9 +242,9 @@
                 txn.Commit();
             }
 
-            IEnumerable<GeoNames.Data.CountryInfo> countries = GeoNamesProvider.GetCountries();
+            IEnumerable<CountryInfo> countries = GeoNamesProvider.GetCountries();
 
-            SQLiteBulkInsert sbi = new SQLiteBulkInsert(this.connection, "CountryInfo");
+            SqliteBulkInsert sbi = new SqliteBulkInsert(this.connection, "CountryInfo");
             sbi.AddParameter("ISO", DbType.String);
             sbi.AddParameter("ISO3", DbType.String);
             sbi.AddParameter("ISONumeric", DbType.String);
@@ -257,12 +265,12 @@
             sbi.AddParameter("Neighbours", DbType.String);
             sbi.AddParameter("EquivalentFipsCode", DbType.String);
 
-            foreach (GeoNames.Data.CountryInfo country in countries)
+            foreach (CountryInfo country in countries)
             {
                 sbi.Insert(
                     new object[]
                         {
-                            country.ISO, country.ISO3, country.ISONumeric, country.Fips, country.Country, country.Capital,
+                            country.Iso, country.Iso3, country.IsoNumeric, country.Fips, country.Country, country.Capital,
                             country.Area, country.Population, country.Continent, country.TopLevelDomain,
                             country.CurrencyCode, country.CurrencyName, country.Phone, country.PostalCodeFormat,
                             country.PostalCodeRegex, country.Languages, country.GeonameId, country.Neighbours,

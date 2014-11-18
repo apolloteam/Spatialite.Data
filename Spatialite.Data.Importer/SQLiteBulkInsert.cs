@@ -2,16 +2,16 @@ namespace Spatialite.Data.Importer
 {
     using System;
     using System.Collections.Generic;
-    using System.Configuration;
     using System.Data;
     using System.Data.SQLite;
+    using System.Diagnostics;
     using System.Text;
 
     /// <summary>
-    ///     Sqlite bulk insert.
-    ///     Link: http://procbits.com/2009/09/08/sqlite-bulk-insert
+    /// Sqlite bulk insert.
+    /// Link: http://procbits.com/2009/09/08/sqlite-bulk-insert
     /// </summary>
-    public class SQLiteBulkInsert
+    public class SqliteBulkInsert
     {
         #region Constants
 
@@ -47,10 +47,10 @@ namespace Spatialite.Data.Importer
 
         #region Constructors and Destructors
 
-        /// <summary>Initializes a new instance of the <see cref="SQLiteBulkInsert"/> class.</summary>
+        /// <summary>Initializes a new instance of the <see cref="SqliteBulkInsert"/> class.</summary>
         /// <param name="connection">The db connection.</param>
         /// <param name="tableName">The table name.</param>
-        public SQLiteBulkInsert(SQLiteConnection connection, string tableName)
+        public SqliteBulkInsert(SQLiteConnection connection, string tableName)
         {
             this.CommitMax = 10000;
             this.AllowBulkInsert = true;
@@ -127,7 +127,7 @@ namespace Spatialite.Data.Importer
 
         #endregion
 
-        #region Methods
+        #region Public Methods and Operators
 
         /// <summary>Add parameter.</summary>
         /// <param name="name">Name of parameter.</param>
@@ -214,6 +214,7 @@ namespace Spatialite.Data.Importer
                 }
                 catch (Exception)
                 {
+                    Debug.Print("Exception");
                 }
                 finally
                 {

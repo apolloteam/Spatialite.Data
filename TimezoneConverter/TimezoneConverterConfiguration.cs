@@ -5,7 +5,7 @@
     /// <summary>The timezone converter configuration.</summary>
     internal static class TimezoneConverterConfiguration
     {
-        #region Public Properties
+        #region Properties
 
         /// <summary>Gets the file path.</summary>
         public static string File

@@ -5,7 +5,7 @@
     /// <summary>The geo names configuration.</summary>
     internal static class GeoNamesConfiguration
     {
-        #region Public Properties
+        #region Properties
 
         /// <summary>Gets the country info file.</summary>
         public static string CountryInfoFile

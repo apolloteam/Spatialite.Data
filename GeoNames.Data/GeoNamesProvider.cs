@@ -69,10 +69,10 @@
 
         #endregion
 
-        #region Public Methods and Operators
+        #region Methods
 
         /// <summary>Get list of countries.</summary>
-        /// <returns>List of countryInfo. <see cref="IEnumerable"/></returns>
+        /// <returns>List of countryInfo.</returns>
         public static IEnumerable<CountryInfo> GetCountries()
         {
             return MapGeoNameCountryInfoFile.Select(kvp => kvp.Value);
@@ -83,7 +83,7 @@
         /// <returns>A TimeZoneInfo object or null. <see cref="TimeZoneInfo"/>.</returns>
         public static CountryInfo GetCountryInfo(string countryCode)
         {
-            CountryInfo countryInfo = null;
+            CountryInfo countryInfo;
             MapGeoNameCountryInfoFile.TryGetValue(countryCode, out countryInfo);
             return countryInfo;
         }
@@ -93,7 +93,7 @@
         /// <returns>A TimeZoneInfo object or null. <see cref="TimeZoneInfo"/>.</returns>
         public static TimeZoneInfo GetTimeZoneInfo(string timeZoneId)
         {
-            TimeZoneInfo timeZoneInfo = null;
+            TimeZoneInfo timeZoneInfo;
             MapGeoNameTimeZoneFile.TryGetValue(timeZoneId, out timeZoneInfo);
             return timeZoneInfo;
         }
@@ -103,7 +103,7 @@
         #region Methods
 
         /// <summary>Load the file timeZones.txt.</summary>
-        /// <returns>Dictionary of timezones index by timezoneId (olson).<see cref="IDictionary" />.</returns>
+        /// <returns>Dictionary of timezones index by timezoneId (olson).</returns>
         private static IDictionary<string, CountryInfo> LoadCountryInfoFromFile()
         {
             IDictionary<string, CountryInfo> data = new Dictionary<string, CountryInfo>();
@@ -121,7 +121,7 @@
         }
 
         /// <summary>Load the file timeZones.txt.</summary>
-        /// <returns>Dictionary of timezones index by timezoneId (olson).<see cref="IDictionary" />.</returns>
+        /// <returns>Dictionary of timezones index by timezoneId (olson).</returns>
         private static IDictionary<string, TimeZoneInfo> LoadTimeZonesFromFile()
         {
             IDictionary<string, TimeZoneInfo> data = new Dictionary<string, TimeZoneInfo>();
